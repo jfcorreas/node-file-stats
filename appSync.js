@@ -2,7 +2,6 @@ var fs = require('fs');
 var diveSync = require('diveSync');
 var moment = require('moment');
 
-//var PATH = "c:/filestats/";
 var PATH = process.argv[2] || process.cwd();
 var periods = [0,0,0,0,0];
 var nfiles = 0;

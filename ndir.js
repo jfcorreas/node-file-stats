@@ -2,17 +2,12 @@ var fs = require('fs');
 var dive = require('dive');
 var moment = require('moment');
 
-var PATH = process.cwd();
-
-if (process.argv[2]) {
-    PATH = process.argv[2];
-}
+var PATH = process.argv[2] || process.cwd();
 
 var ndirs = 0;
 var nfiles = 0;
 
 var start = new Date();
-
 
 
 dive(PATH, { all: true, recursive: true, directories: true, files: false }, function(err, dir) {
