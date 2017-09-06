@@ -9,7 +9,7 @@ var ndirs = 0;
 
 var start = new Date();
 
-diveSync(PATH, { all: true, recursive: true, directories: true,  }, function(err, file) {
+diveSync(PATH, { all: true, recursive: true, directories: true }, function(err, file) {
   if (err) throw err;
   let stats = fs.statSync(file);
 

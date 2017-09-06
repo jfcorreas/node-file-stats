@@ -9,7 +9,6 @@ var nfiles = 0;
 
 var start = new Date();
 
-
 dive(PATH, { all: true, recursive: true, directories: true, files: false }, function(err, dir) {
   if (err) throw err;
   fs.stat(dir, function(err, stats) {
@@ -24,8 +23,10 @@ dive(PATH, { all: true, recursive: true, directories: true, files: false }, func
   	}
   });
 }, function() {
+  nfiles -= ndirs;
   console.log('');
   console.log('Analisis de ' + PATH + ' Completado: ' + ndirs + ' directorios. ' + nfiles + ' ficheros.');
+  console.log('(NOTA: a la cantidad de ficheros hay que sumarle los directorios del raíz + 1)');
   console.log('');
 
   var end = new Date();
